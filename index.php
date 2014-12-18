@@ -1,6 +1,6 @@
 <html>
 <head>
-	<title>	Khmer Store</title>
+	<title>Cam Jobs</title>
 	<link rel="shortcut icon" href="images/icon.ico" />
 	<link href="style/main.css" rel="stylesheet" />
 	<link href="style/sideNav.css" rel="stylesheet" />
