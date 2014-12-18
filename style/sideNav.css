@@ -1,0 +1,34 @@
+﻿
+#sideNav {
+    float: left;
+}
+#sideNav h1{
+    font-size: 15px;
+    padding: 5px 0px 8px 10px;
+}
+    #sideNav li {
+        display: block;
+        width: 202px;
+        font-size: 15px;
+        border-bottom: 1px solid #DDDDDD;
+    }
+    #sideNav li:nth-of-type(1) a {
+        border-top: 1px solid #DDDDDD;
+    }
+
+    #sideNav a {
+        padding: 8px 0px 8px 8px;
+        text-decoration: none;
+        color: black;
+        display: block;
+    }
+
+    #sideNav li:hover {
+        color: #0404B4;
+        background: white;
+        box-shadow: 0 3px 2px -1.5px #CCCCCC;
+    }
+
+    #sideNav a:hover {
+        color: #0404B4;
+    }

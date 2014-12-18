@@ -1,0 +1,50 @@
+﻿.formTitle {
+    font-size: 26px;
+    padding-bottom: 10px;
+}
+.inputFormBox {
+    border: 1px solid #ddd;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 17px;
+    padding: 20px;
+	margin: 10px;
+}
+.inputFormBox .formSubTitle{
+	font-size: 20px;
+    padding: 25px 0px 15px 0px;
+	display: block;
+}
+	.inputFormBox td{
+		font-size: 17px;
+	}
+
+    .inputFormBox .tableBody > div {
+        margin: 5px 0px 5px 0px;
+    }
+
+.inputFormBox input[type=text], .inputFormBox input[type=password], .inputFormBox select, .inputFormBox textarea {
+    padding: 7px 5px;
+	margin: 4px 5px;
+    outline: none;
+    border: 1px solid #ddd;
+    font-size: 17px;
+    width: 280px;
+}
+
+.inputFormBox input:focus {
+    border: 1px solid #4b8df8;
+}
+
+.inputFormBox a.button, .inputFormBox button.button, .inputFormBox input[type=submit].button {
+    color: white;
+    background-color: #2D9AF9;
+    padding: 8px 15px;
+    outline: none;
+    font-size: 17px;
+    margin: 10px 10px 0px 0px;
+    text-decoration: none;
+    border:none;
+}
+    .inputFormBox a.button:hover, .inputFormBox input[type=submit]:hover {
+        background-color: #3074FC;
+    }
