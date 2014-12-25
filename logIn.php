@@ -1,22 +1,26 @@
 <?php
-    if (isset($_POST['userName']) && isset($_POST['password'])) {
-        include 'connectDB.php';
-        
-        $userName = $_POST['userName'];
-        $password = $_POST['password'];
-        
-        $sql = "Select UserName From Company Where UserName=? and Password=?";
-        $query = $db->prepare($sql);
-        $numRows = mysql_num_rows($query);
-        if ($numRows != 0) {
-            session_start();
-            $_SESSION['userName'] = $userName;
-            echo $_SESSION['userName']; 
-        } 
-        else {
-            echo 'Worng UserName/Password';            
-        }
+if (!empty($_POST)) {
+    include 'connectDB.php';
+
+    $userName = $_POST['userName'];
+    $password = $_POST['password'];
+
+    $sql = "Select ID From Company Where UserName=? and Password=?";
+    $statement = $db->prepare($sql);
+    $statement->execute(array($userName, $password));
+
+    if ($statement->rowCount() == 1) {
+	session_start();
+	$_SESSION['userName'] = $userName;
+	if($userID = $statement->fetch(PDO::FETCH_NUM)){
+	    $_SESSION['userID'] = $userID[0];	
+	}
+	    
+	header('Location: index.php');
+    } else {
+	$incorrectPassword = true;
     }
+}
 ?>
 
 <html>
@@ -24,12 +28,7 @@
         <title>	Khmer Store</title>
         <link rel="shortcut icon" href="images/icon.ico" />
         <link href="style/main.css" rel="stylesheet" />
-        <link href="style/pageLogIn.css" rel="stylesheet" />
-
-        <!-- Start Auto Complete Search -->    
-        <link href="style/jquery-ui-1.10.4.custom.css" rel="stylesheet" />
-        <!-- End Auto Complete Search -->	
-
+        <link href="style/pageLogIn.css" rel="stylesheet" />	
         <script src="script/jquery-2.1.1.min.js"></script>
     </head>
     <body>
@@ -45,17 +44,29 @@
             <div id="main">	
                 <div id="">
                     <form method="post" action="logIn.php">
-                        <span class="formTitle">Register</span>
-                        <table class="inputFormBox">
-                            <tr><td><span class="formSubTitle">Account Information</span></td></tr>
+                        <span class="formTitle">Long in</span>
+			<table class="inputFormBox">
+                            <tr>
+				<td><span class="formSubTitle">Log in</span></td>
+			    </tr>
                             <tr>
                                 <td>Username : </td>
                                 <td><input class="requiredValidation" type="text" name="userName" /></td>
                             </tr>
                             <tr>
                                 <td>Password : </td>
-                                <td><input class="requiredValidation" type="text" name="password" /></td>
+                                <td><input class="requiredValidation" type="password" name="password" /></td>
                             </tr>
+			    <tr>
+				<td></td>
+				<td>
+				    <?php
+				    if (isset($incorrectPassword)) {
+					echo 'The username or password you entered is incorrect.';
+				    }
+				    ?>
+				</td>
+			    </tr>
                             <tr>
                                 <td></td>
                                 <td><input class="button" type="submit" value="Register" name="submit" /></td>

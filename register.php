@@ -1,6 +1,6 @@
 <?php include 'vars.php'; ?>
 <?php
-if (isset($_POST['userName'])) {
+if (!empty($_POST)) {
     include 'connectDB.php';
 
     $userName = $_POST['userName'];
@@ -16,22 +16,23 @@ if (isset($_POST['userName'])) {
     $address = $_POST['address'];
     $des = $_POST['des'];
 
-    $sql = "Insert Into company(userName,password,name,industry,empSize,location,contactPerson,phone,email,website,address,description) Values(?,?,?,?,?,?,?,?,?,?,?,?)";
-    $query = $db->prepare($sql);
+    $sql = "Insert Into company(userName,password,name,industry,empSize,location,contactPerson," .
+	   "phone,email,website,address,description) Values(?,?,?,?,?,?,?,?,?,?,?,?)";
+    $statement = $db->prepare($sql);
     try {
-        $query->execute(array(
-            $userName, $password, $name, $industry, $empSize, $location,
-            $contactPerson, $phone, $email, $website, $address, $des
-        ));
+	$statement->execute(array(
+	    $userName, $password, $name, $industry, $empSize, $location,
+	    $contactPerson, $phone, $email, $website, $address, $des
+	));
     } catch (Exception $ex) {
-        die('Cannot execute query: ' . $e->getMessage());
+	die('Cannot execute query: ' . $ex->getMessage());
     }
 }
 ?>
 
 <html>
     <head>
-        <title>	Khmer Store</title>
+        <title>CamJobs</title>
         <link rel="shortcut icon" href="images/icon.ico" />
         <link href="style/main.css" rel="stylesheet" />
         <link href="style/pageLogIn.css" rel="stylesheet" />
@@ -73,11 +74,11 @@ if (isset($_POST['userName'])) {
                             </tr>
                             <tr>
                                 <td>Password : </td>
-                                <td><input class="requiredValidation" type="text" name="password" /></td>
+                                <td><input class="requiredValidation" type="password" name="password" /></td>
                             </tr>
                             <tr>
                                 <td>Retype password : </td>
-                                <td><input class="requiredValidation" type="text" name="retypePassword" /></td>
+                                <td><input class="requiredValidation" type="password" name="retypePassword" /></td>
                             </tr>
                             <tr><td><span class="formSubTitle">Company Information</span></td></tr>
                             <tr>
@@ -104,68 +105,68 @@ if (isset($_POST['userName'])) {
                                 <td>Location : </td>
                                 <td>
                                     <select name="location">
-                                    <?php
-                                    for ($i = 0; $i < 9; $i++) {
-                                        echo "<option value='$i'>$locations[$i]</option>";
-                                    }
-                                    ?>
-                                </select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Contact Person : </td>
-                            <td><input type="text" name="contactPerson" /></td>
-                        </tr>					
-                        <tr>
-                            <td>Phone : </td>
-                            <td><input type="text" name="phone" /></td>
-                        </tr>
-                        <tr>
-                            <td>Email : </td>
-                            <td><input class="requiredValidation" type="text" name="email" id="email"></td>
-                        </tr>
-                        <tr>
-                            <td>Website : </td>
-                            <td><input type="text" name="website" /></td>
-                        </tr>
-                        <tr>
-                            <td>Address : </td>
-                            <td><textarea name="address"></textarea></td>
-                        </tr>
-                        <tr>
-                            <td>Description : </td>
-                            <td><textarea name="des"></textarea></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td><input class="button" type="submit" value="Register" name="submit" /></td>
-                        </tr>
-                    </table>
-                </form>
+					<?php
+					for ($i = 0; $i < 9; $i++) {
+					    echo "<option value='$i'>$locations[$i]</option>";
+					}
+					?>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Contact Person : </td>
+                                <td><input type="text" name="contactPerson" /></td>
+                            </tr>					
+                            <tr>
+                                <td>Phone : </td>
+                                <td><input type="text" name="phone" /></td>
+                            </tr>
+                            <tr>
+                                <td>Email : </td>
+                                <td><input class="requiredValidation" type="text" name="email" id="email"></td>
+                            </tr>
+                            <tr>
+                                <td>Website : </td>
+                                <td><input type="text" name="website" /></td>
+                            </tr>
+                            <tr>
+                                <td>Address : </td>
+                                <td><textarea name="address"></textarea></td>
+                            </tr>
+                            <tr>
+                                <td>Description : </td>
+                                <td><textarea name="des"></textarea></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td><input class="button" type="submit" value="Register" name="submit" /></td>
+                            </tr>
+                        </table>
+                    </form>
+                    <div class="clear"></div>
+                </div>
                 <div class="clear"></div>
-            </div>
+            </div>	
             <div class="clear"></div>
         </div>	
-        <div class="clear"></div>
-    </div>	
 
-    <script>
-        $(".requiredValidation").focusout(function () {
-            if (!$(this).val()) {
-                if (!$(this).parent().parent().find("td.validationMsg").length)
-                    $(this).parent().parent().append("<td class='validationMsg' style='color: red'>* Required</td>");
+        <script>
+            $(".requiredValidation").focusout(function () {
+                if (!$(this).val()) {
+                    if (!$(this).parent().parent().find("td.validationMsg").length)
+                        $(this).parent().parent().append("<td class='validationMsg' style='color: red'>* Required</td>");
+                }
+                else
+                    $(this).parent().parent().find("td.validationMsg").remove();
+
+                enableSubmitButton();
+            });
+            function enableSubmitButton() {
+                if ($("form .validationMsg").length)
+                    $("form .button").attr('disabled', 'disabled');
+                else
+                    $("form .button").removeAttr('disabled');
             }
-            else
-                $(this).parent().parent().find("td.validationMsg").remove();
-
-            enableSubmitButton();
-        });
-        function enableSubmitButton() {
-            if ($("form .validationMsg").length)
-                $("form .button").attr('disabled', 'disabled');
-            else
-                $("form .button").removeAttr('disabled');
-        }
-    </script>
-</body>
+        </script>
+    </body>
 </html>

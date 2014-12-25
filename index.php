@@ -17,21 +17,25 @@
                     <a href="index.php"><img src="images/logo.png" style="height: 34px" /></a>
                     <span id="user">
                         <?php
-                            $userName = "satya";
-                            $userHasLogIn = "
-                                            Welcome :
-                                            <a id='userName' href='user.php'>$userName&nbsp;&#x25BE;</a>
-                                            <div class='arrow-up'></div>
-                                            <ul>                
-                                                    <li><a href='UserAccount.aspx'>My Account</a></li>
-                                                    <li><a href='LogOut.aspx'>Log Out</a></li>
-                                            </ul>";
-                            $userNotLogIn = "<a id='userName' href='logIn.php'>Log in</a>";
-                            session_start();
-                            if ($_SESSION['userName']){
+			    session_start();
+			    if (isset($_SESSION['userName'])){
+				$userName = $_SESSION['userName'];
+				$userID = $_SESSION['userID'];
+				
+				$userName = ucwords($userName);
+				$userHasLogIn = "
+				    <a id='userName' href='user.php'>$userName&nbsp;&#x25BE;</a>
+				    <div class='arrow-up'></div>
+				    <ul>                
+					<li><a href='userAccount.php'>My Account</a></li>
+					<li><a href='jobPost.php'>My Jobs Post</a></li>
+					<li><a href='logOut.php'>Log Out</a></li>
+				    </ul>";				                            
+                            
                                 echo $userHasLogIn;
                             }
                             else{
+				$userNotLogIn = "<a id='userName' href='logIn.php'>Log in</a>";
                                 echo $userNotLogIn;                        
                             }
                         ?>
@@ -72,7 +76,7 @@
                             for ($j = 0; $j < 3; $j++) {
                                 $no = $i * 3 + $j;
                                 echo "<td><a href='jobsByCat.php?cat=" . $no . "'>";
-                                echo $jobCat[$no];
+                                echo $functions[$no];
                                 echo " (12)</a></td>";
                             }
                             echo "<tr>";
