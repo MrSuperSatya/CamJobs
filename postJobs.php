@@ -1,9 +1,15 @@
-<?php include 'vars.php'; ?>
+<?php include 'functions.php'; ?>
 <?php
-if (!empty($_POST)) {
-    include 'connectDB.php';
+if (session_status() == PHP_SESSION_NONE) {
     session_start();
-    
+}
+if (empty($_SESSION)) {
+    header('Location: logIn.php?fromPage=postJob.php');
+}
+
+if (!empty($_POST)) {
+    require_once('connectDB.php');
+
     $companyID = $_SESSION['userID'];
     $title = $_POST['title'];
     $yearExp = $_POST['yearExp'];
@@ -39,7 +45,19 @@ if (!empty($_POST)) {
         <link rel="shortcut icon" href="images/icon.ico" />
         <link href="style/main.css" rel="stylesheet" />
         <link href="style/pageLogIn.css" rel="stylesheet" />
+
+	<link rel="stylesheet" href="style/jquery-ui.min.css">
 	<script src="script/jquery-2.1.1.min.js"></script>
+	<script src="script/jquery-ui.min.js"></script>
+	<script>
+            $("document").ready(function () {
+                $("#postDate").datepicker();
+                $("#postDate").datepicker("option", "dateFormat", "dd/mm/yy");
+		$("#closingDate").datepicker();
+                $("#closingDate").datepicker("option", "dateFormat", "dd/mm/yy");
+		$("#postDate").val($.datepicker.formatDate('dd/mm/yy', new Date()));		
+            });
+	</script>
     </head>
     <body>
         <div id="wrapper">
@@ -47,29 +65,7 @@ if (!empty($_POST)) {
                 <div id="subTopBar">
                     <a href="index.php"><img src="images/logo.png" style="height: 34px" /></a>
                     <span id="user">
-                        <?php
-			    session_start();
-			    if (isset($_SESSION['userName'])){
-				$userName = $_SESSION['userName'];
-				$userID = $_SESSION['userID'];
-				
-				$userName = ucwords($userName);
-				$userHasLogIn = "
-				    <a id='userName' href='user.php'>$userName&nbsp;&#x25BE;</a>
-				    <div class='arrow-up'></div>
-				    <ul>                
-					<li><a href='userAccount.php'>My Account</a></li>
-					<li><a href='jobPost.php'>My Jobs Post</a></li>
-					<li><a href='logOut.php'>Log Out</a></li>
-				    </ul>";				                            
-                            
-                                echo $userHasLogIn;
-                            }
-                            else{
-				$userNotLogIn = "<a id='userName' href='logIn.php'>Log in</a>";
-                                echo $userNotLogIn;                        
-                            }
-                        ?>
+			<?php displayUsername(); ?>
                     </span>
                     <div class="clear"></div>
                 </div>
@@ -103,7 +99,7 @@ if (!empty($_POST)) {
                                 <td>Function : </td>
                                 <td>
                                     <select name="function">
-                                        <?php
+					<?php
 					for ($i = 0; $i < 9; $i++) {
 					    echo "<option value='$i'>$functions[$i]</option>";
 					}
@@ -123,7 +119,7 @@ if (!empty($_POST)) {
                                 <td>Qualification : </td>
                                 <td>
                                     <select name="qual">
-                                        <?php
+					<?php
 					for ($i = 0; $i < 4; $i++) {
 					    echo "<option value='$i'>$quals[$i]</option>";
 					}
@@ -135,9 +131,9 @@ if (!empty($_POST)) {
                                 <td>Sex : </td>
                                 <td>
                                     <select name="sex">
-                                        <option value="both">Both</option>
-					<option value="male">Male</option>
-					<option value="female">Female</option>
+                                        <option value="Male/Female">Male/Female</option>
+					<option value="Male">Male</option>
+					<option value="Female">Female</option>
                                     </select>
                                 </td>
                             </tr>
@@ -163,11 +159,15 @@ if (!empty($_POST)) {
                             </tr>
 			    <tr>
                                 <td>Post Date : </td>
-                                <td><input type="text" name="postDate" /></td>
+                                <td><input type="text" name="postDate" id="postDate" /></td>
+			    <script>
+
+			    </script>
+
                             </tr>
 			    <tr>
                                 <td>Closing Date : </td>
-                                <td><input type="text" name="closingDate" /></td>
+                                <td><input type="text" name="closingDate" id="closingDate" /></td>
                             </tr>
 			    <tr>
                                 <td></td>

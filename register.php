@@ -17,7 +17,7 @@ if (!empty($_POST)) {
     $des = $_POST['des'];
 
     $sql = "Insert Into company(userName,password,name,industry,empSize,location,contactPerson," .
-	   "phone,email,website,address,description) Values(?,?,?,?,?,?,?,?,?,?,?,?)";
+	    "phone,email,website,address,description) Values(?,?,?,?,?,?,?,?,?,?,?,?)";
     $statement = $db->prepare($sql);
     try {
 	$statement->execute(array(
@@ -48,15 +48,7 @@ if (!empty($_POST)) {
             <div id="topBar">
                 <div id="subTopBar">
                     <a href="index.php"><img src="images/logo.png" style="height: 34px" /></a>
-                    <span id="user">
-                        Welcome :
-                        <a id="userName" href="user.php">Sangvat&nbsp;&#x25BE;</a>		
-                        <div class="arrow-up"></div>
-                        <ul>                
-                            <li><a href="UserAccount.aspx">My Account</a></li>
-                            <li><a href="LogOut.aspx">Log Out</a></li>
-                        </ul>
-                    </span>
+                    <span id="user"></span>
                     <div class="clear"></div>
                 </div>
                 <div class="clear"></div>

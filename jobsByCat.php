@@ -1,29 +1,19 @@
+<?php include 'functions.php'; ?>
 <html>
     <head>
 	<title>	Khmer Store</title>
 	<link rel="shortcut icon" href="images/icon.ico" />
 	<link href="style/main.css" rel="stylesheet" />
 	<link href="style/sideNav.css" rel="stylesheet" />
-
-	<!-- Start Auto Complete Search -->    
-	<link href="style/jquery-ui-1.10.4.custom.css" rel="stylesheet" />
-	<!-- End Auto Complete Search --> 
-	<?php include 'vars.php'; ?>
     </head>
     <body>
 	<div id="wrapper">
 	    <div id="topBar">
 		<div id="subTopBar">
-		    <a href="Default.aspx"><img src="images/logo.png" style="height: 34px" /></a>
+		    <a href="index.php"><img src="images/logo.png" style="height: 34px" /></a>
 		    <span id="user">
-			Welcome :
-			<a id="userName" href="user.php">Sangvat&nbsp;&#x25BE;</a>		
-			<div class="arrow-up"></div>
-			<ul>                
-			    <li><a href="UserAccount.aspx">My Account</a></li>
-			    <li><a href="LogOut.aspx">Log Out</a></li>
-			</ul>
-		    </span>
+			<?php displayUsername(); ?>
+                    </span>
 		    <div class="clear"></div>
 		</div>
 		<div class="clear"></div>
@@ -61,7 +51,7 @@
 			    <th>Closing Date</th>
 			</tr>
 			<?php
-			include 'connectDB.php';
+			require_once 'connectDB.php';
 
 			$sql = "Select J.ID,Title,Name,j.Location,ClosingDate" .
 				" From Job As J,Company AS C" .
@@ -87,8 +77,8 @@
 		    <div class="clear"></div>
 		</div>
 		<div class="clear"></div>
-	    </div>	
-	    <div class="clear"></div>
+	    </div>		    
+	    <div class="clear"></div>	    
 	</div>	
     </body>
 </html>

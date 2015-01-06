@@ -12,10 +12,10 @@ if (!empty($_POST)) {
     if ($statement->rowCount() == 1) {
 	session_start();
 	$_SESSION['userName'] = $userName;
-	if($userID = $statement->fetch(PDO::FETCH_NUM)){
-	    $_SESSION['userID'] = $userID[0];	
+	if ($userID = $statement->fetch(PDO::FETCH_NUM)) {
+	    $_SESSION['userID'] = $userID[0];
 	}
-	    
+
 	header('Location: index.php');
     } else {
 	$incorrectPassword = true;
@@ -44,7 +44,15 @@ if (!empty($_POST)) {
             <div id="main">	
                 <div id="">
                     <form method="post" action="logIn.php">
-                        <span class="formTitle">Long in</span>
+                        <span class="formTitle">
+			    <?php
+			    if (!empty($_GET) && isset($_GET['fromPage'])) {
+				echo 'To post jobs please log in.';
+			    } else {
+				echo 'Long in';
+			    }
+			    ?>		    
+			</span>
 			<table class="inputFormBox">
                             <tr>
 				<td><span class="formSubTitle">Log in</span></td>
@@ -69,7 +77,7 @@ if (!empty($_POST)) {
 			    </tr>
                             <tr>
                                 <td></td>
-                                <td><input class="button" type="submit" value="Register" name="submit" /></td>
+                                <td><input class="button" type="submit" value="Log in" name="submit" /></td>
                             </tr>
                         </table>
                     </form>

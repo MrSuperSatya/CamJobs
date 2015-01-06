@@ -1,14 +1,10 @@
+<?php include 'functions.php'; ?>
 <html>
     <head>
         <title>Cam Jobs</title>
         <link rel="shortcut icon" href="images/icon.ico" />
         <link href="style/main.css" rel="stylesheet" />
-        <link href="style/sideNav.css" rel="stylesheet" />
-
-        <!-- Start Auto Complete Search -->    
-        <link href="style/jquery-ui-1.10.4.custom.css" rel="stylesheet" />
-        <!-- End Auto Complete Search --> 
-        <?php include 'vars.php'; ?>
+        <link href="style/sideNav.css" rel="stylesheet" />       
     </head>
     <body>
         <div id="wrapper">
@@ -16,29 +12,7 @@
                 <div id="subTopBar">
                     <a href="index.php"><img src="images/logo.png" style="height: 34px" /></a>
                     <span id="user">
-                        <?php
-			    session_start();
-			    if (isset($_SESSION['userName'])){
-				$userName = $_SESSION['userName'];
-				$userID = $_SESSION['userID'];
-				
-				$userName = ucwords($userName);
-				$userHasLogIn = "
-				    <a id='userName' href='user.php'>$userName&nbsp;&#x25BE;</a>
-				    <div class='arrow-up'></div>
-				    <ul>                
-					<li><a href='userAccount.php'>My Account</a></li>
-					<li><a href='jobPost.php'>My Jobs Post</a></li>
-					<li><a href='logOut.php'>Log Out</a></li>
-				    </ul>";				                            
-                            
-                                echo $userHasLogIn;
-                            }
-                            else{
-				$userNotLogIn = "<a id='userName' href='logIn.php'>Log in</a>";
-                                echo $userNotLogIn;                        
-                            }
-                        ?>
+			<?php displayUsername(); ?>
                     </span>
                     <div class="clear"></div>
                 </div>
@@ -56,13 +30,20 @@
             </div>
             <div id="main">	
                 <div id="search">
-                    <input type="text" placeholder="Search job..." />
-                    <select> 
-                        <option>Accounting</option>
-                        <option>Information Technology</option>
+                    <input type="text" placeholder="Search..." />
+                    <select> 			
+			<?php
+			    for($i=0;$i<count($functions);$i++){
+				echo "<option value='$$i'>$functions[$i]</option>";
+			    }
+			?>
                     </select>
                     <select> 
-                        <option>Phnom Penh</option>
+                        <?php
+			    for($i=0;$i<count($locations);$i++){
+				echo "<option value='$$i'>$locations[$i]</option>";
+			    }
+			?>
                     </select>
                     <input type="submit" value="Search" />
                     <div class="clear"></div>
@@ -70,23 +51,32 @@
                 </div>
                 <div id="jobCat">
                     <table>
-                        <?php
-                        for ($i = 0; $i < 6; $i++) {
-                            echo "<tr>";
-                            for ($j = 0; $j < 3; $j++) {
-                                $no = $i * 3 + $j;
-                                echo "<td><a href='jobsByCat.php?cat=" . $no . "'>";
-                                echo $functions[$no];
-                                echo " (12)</a></td>";
-                            }
-                            echo "<tr>";
-                        }
-                        ?>
+			<?php
+			// Set count for each job function
+			$counts = getJobFunctionCounts();
+			
+			// Display all job functions
+			$j = 0;
+			for ($i = 0; $i < 12; $i++) {
+			    echo "<tr>";
+			    for ($j = 0; $j < 3 && $i * 3 + $j < 34; $j++) {
+				$no = $i * 3 + $j;
+				echo "<td><a href='jobsByCat.php?cat=" . $no . "'>";
+				echo $functions[$no];
+				echo " ($counts[$no])";
+				echo "</a></td>";
+			    }
+			    echo "<tr>";
+			}
+			?>
                     </table>
                     <div class="clear"></div>
                 </div>
                 <div class="clear"></div>
             </div>	
+	    <div class="main">
+		khkdsaf
+	    </div>
             <div class="clear"></div>
         </div>	
     </body>

@@ -1,208 +1,208 @@
 body {
-	font-family: Verdana, Arial, Helvetica, sans-serif;	
-	font-size: 14px;
-	padding: 0px;
+    font-family: Verdana, Arial, Helvetica, sans-serif;	
+    font-size: 14px;
+    padding: 0px;
 }
 a{
-	text-decoration: none;
+    text-decoration: none;
 }
 * {margin: 0px;padding: 0px;}
 
 #wrapper {
-	background: #ebebeb;
-	margin: 0 auto;
+    background: #ebebeb;
+    margin: 0 auto;
 }
 
 #topBar {
-	padding: 15px 0px;	
-	background: #fff;
+    padding: 15px 0px;	
+    background: #fff;
 }
 #topBar #subTopBar{
-	width: 1000px;
-	margin: 0 auto;
+    width: 1000px;
+    margin: 0 auto;
 }
 #topBar #user{
-	float: right;
+    float: right;
     text-align: right;
-	width: 185px;
+    width: 185px;
 }
-	#topBar #user #userName {			
-		padding: 6px 10px;  	
-		font-weight: 800;			
-	}
-	#topBar #user #userName:hover {		
-		background: #eee;
-	}
-	#topBar #user:hover ul {
-		display: block;   
-	}
-    #topBar #user ul {        
-        border: 1px solid #bbb;
-        color: #333;
-        margin-top: 3px;
-        display: none;
-        position: absolute;
-        z-index: 20;
-        -webkit-box-shadow: 0px 5px 20px 0px #000000 ;
-        -moz-box-shadow: 0 0 10px 0px #000000 ;
-        box-shadow: 0px 0px 10px 0px #888 ;
-    }
-    #topBar #user ul li {
-        border-bottom: 1px solid #ddd;
-        list-style-type: none;
-        background: #fff;
-    }
-        #topBar #user ul li a {
-            font-size: 15px;
-            text-decoration: none;
-            color: #111;
-            padding-top: 5px ;
-            padding-bottom: 5px;
-            padding-left: 25px;
-            width: 160px;
-            display: block;
-            text-align: left;
-        }
-		#topBar #user ul li a:hover {
-			background: #ddd;
-		}
-		/*Tranagle on top of menu user*/
-		#topBar #user ul:after, #topBar #user ul:before {
-			bottom: 100%;
-			left: 155px;
-			border: solid transparent;
-			content: " ";
-			height: 0;
-			width: 0;
-			position: absolute;
-			pointer-events: none;
-		}
-		#topBar #user ul:after {
-			border-color: rgba(136, 183, 213, 0);
-			border-bottom-color: #fff;
-			border-width: 6px;
-			margin-left: -6px;
-		}
-		#topBar #user ul:before {
-			border-color: rgba(194, 225, 245, 0);
-			border-bottom-color: #aaa;
-			border-width: 7px;
-			margin-left: -7px;
-		}      
-		/*End - Tranagle on top of menu use */
+#topBar #user #userName {			
+    padding: 6px 10px;  	
+    font-weight: 800;			
+}
+#topBar #user #userName:hover {		
+    background: #eee;
+}
+#topBar #user:hover ul {
+    display: block;   
+}
+#topBar #user ul {        
+    border: 1px solid #bbb;
+    color: #333;
+    margin-top: 3px;
+    display: none;
+    position: absolute;
+    z-index: 20;
+    -webkit-box-shadow: 0px 5px 20px 0px #000000 ;
+    -moz-box-shadow: 0 0 10px 0px #000000 ;
+    box-shadow: 0px 0px 10px 0px #888 ;
+}
+#topBar #user ul li {
+    border-bottom: 1px solid #ddd;
+    list-style-type: none;
+    background: #fff;
+}
+#topBar #user ul li a {
+    font-size: 15px;
+    text-decoration: none;
+    color: #111;
+    padding-top: 5px ;
+    padding-bottom: 5px;
+    padding-left: 25px;
+    width: 160px;
+    display: block;
+    text-align: left;
+}
+#topBar #user ul li a:hover {
+    background: #ddd;
+}
+/*Tranagle on top of menu user*/
+#topBar #user ul:after, #topBar #user ul:before {
+    bottom: 100%;
+    left: 155px;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+}
+#topBar #user ul:after {
+    border-color: rgba(136, 183, 213, 0);
+    border-bottom-color: #fff;
+    border-width: 6px;
+    margin-left: -6px;
+}
+#topBar #user ul:before {
+    border-color: rgba(194, 225, 245, 0);
+    border-bottom-color: #aaa;
+    border-width: 7px;
+    margin-left: -7px;
+}      
+/*End - Tranagle on top of menu use */
 
 #nav{
-	background: #fff;
+    background: #fff;
 }
 #nav #subNav{
-	margin: 0px auto;
-	display: table;
-	margin-bottom: 10px;	
+    margin: 0px auto;
+    display: table;
+    margin-bottom: 10px;	
 }
 #nav a {
-	margin: 5px 35px 0px 0px;
-	padding: 8px 0px;
-	font-size: 15px;
-	color: #333;
-	display: block;
-	float:left;
+    margin: 5px 35px 0px 0px;
+    padding: 8px 0px;
+    font-size: 15px;
+    color: #333;
+    display: block;
+    float:left;
 }
 #nav a.active{
-	font-weight: bold;	
+    font-weight: bold;	
 }
 #nav a.active, #nav a:hover{
-	border-bottom: 3px solid blue;
-	color: #000;
+    border-bottom: 3px solid blue;
+    color: #000;
 }
-#main{
-	margin: 0px auto;
-	width: 1000px;
-	background: #fff;
+#main, .main{
+    margin: 12px auto;
+    width: 1000px;
+    background: #fff;
 }
-	#main #search {
-		margin: 0px auto;
-		display: table;
-	}
-	#main #search input[type=text] {
-		margin-top: 5px;
-		margin-right: 10px;
-		float: left;
-		height: 37px;	
-		width: 250px;
-		font-size: 16px;
-		outline: none;
-		border: 1px solid #ccc;
-		padding-left: 8px;
-	}	
-	#main #search input[type=text]:focus {
-		border: 1px solid rgba(81, 203, 238, 1);	
-		border-color: #2D9AF9;
-	}
-	#main #search select {
-		float: left;
-		margin-right: 10px;
-		margin-top: 5px;
-		height: 37px;
-		padding-left: 5px;
-		width: 200px;
-		border: 1px solid #ccc;
-		font-size: 16px;
-		outline: none;	
-	}
-	#main #search select:focus {
-		border: 1px solid rgba(81, 203, 238, 1);
-		border-color: #2D9AF9;
-	}
-	#main #search input[type=submit],#header button{
-		float: left;
-		margin-top: 5px;
-		margin-left: 10px;
-		padding: 8px 20px;
-		color: #fff;
-		font-size: 17px;
-		background: #2D9AF9;
-		border-width: 1px;
-		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-		border:none;
-		-webkit-border-radius: 2px;
-		-moz-border-radius: 2px;
-		border-radius: 2px;
-		/*text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);*/
-		/*border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);*/
-	}
-	#main #search input[type=submit]:hover, button:hover {
-		background: #3074FC;		
-	}
-	
-	#main #jobCat {
-		margin: 0px auto;
-		display: table;
-		margin-top: 15px;
-	}
-	#main #jobCat table td{
-		padding: 8px 15px;
-		width: 280px;
-		font-size: 15px;	
-	}
-	#main #jobCat table th{
-		text-align: left;
-		padding: 8px 15px;
-		font-size: 15px;	
-	}
-		#main #jobCat table td a{
-			color: #333;			
-		}
-		#main #jobCat table td a:hover{
-			color: #000;
-			text-decoration: underline;
-		}
+#main #search {
+    margin: 0px auto;
+    display: table;
+}
+#main #search input[type=text] {
+    margin-top: 5px;
+    margin-right: 10px;
+    float: left;
+    height: 37px;	
+    width: 250px;
+    font-size: 16px;
+    outline: none;
+    border: 1px solid #ccc;
+    padding-left: 8px;
+}	
+#main #search input[type=text]:focus {
+    border: 1px solid rgba(81, 203, 238, 1);	
+    border-color: #2D9AF9;
+}
+#main #search select {
+    float: left;
+    margin-right: 10px;
+    margin-top: 5px;
+    height: 37px;
+    padding-left: 5px;
+    width: 200px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    outline: none;	
+}
+#main #search select:focus {
+    border: 1px solid rgba(81, 203, 238, 1);
+    border-color: #2D9AF9;
+}
+#main #search input[type=submit],#header button{
+    float: left;
+    margin-top: 5px;
+    margin-left: 10px;
+    padding: 8px 20px;
+    color: #fff;
+    font-size: 17px;
+    background: #2D9AF9;
+    border-width: 1px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    border:none;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    /*text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);*/
+    /*border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);*/
+}
+#main #search input[type=submit]:hover, button:hover {
+    background: #3074FC;		
+}
+
+#main #jobCat {
+    margin: 0px auto;
+    display: table;
+    margin-top: 15px;
+}
+#main #jobCat table td{
+    padding: 8px 15px;
+    width: 280px;
+    font-size: 15px;	
+}
+#main #jobCat table th{
+    text-align: left;
+    padding: 8px 15px;
+    font-size: 15px;	
+}
+#main #jobCat table td a{
+    color: #333;			
+}
+#main #jobCat table td a:hover{
+    color: #000;
+    text-decoration: underline;
+}
 
 /*------------------------------- Footer -------------------------------------------*/
 #bottomBar {
     border-top: 1px solid #D8D8D8;
-	padding: 5px 20px 2px 0px;	
-	background: #fff;
-	width:98%;
+    padding: 5px 20px 2px 0px;	
+    background: #fff;
+    width:98%;
 }
 #bottomBar a{
     color: #333;
@@ -215,26 +215,26 @@ a{
 #bottomBar img {
     height: 32px;
 }
-    #bottomBar #subBottomBar {
-        margin-left: 40px;
-    }
-    #bottomBar #subBottomBarLeft{
-        padding-top: 5px;
-        display:inline-block;
-    }
-    #bottomBar #subBottomBarRight {
-        float:right;
-        display:inline-block;
-    }
-    #bottomBar #subBottomBarRight a{
-        margin-right: 5px;
-    }
+#bottomBar #subBottomBar {
+    margin-left: 40px;
+}
+#bottomBar #subBottomBarLeft{
+    padding-top: 5px;
+    display:inline-block;
+}
+#bottomBar #subBottomBarRight {
+    float:right;
+    display:inline-block;
+}
+#bottomBar #subBottomBarRight a{
+    margin-right: 5px;
+}
 
 
 
 
 .clear{
-	clear:both;
+    clear:both;
 }
 .hidden {
     visibility:hidden;
