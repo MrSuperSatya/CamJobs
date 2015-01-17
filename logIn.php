@@ -25,7 +25,7 @@ if (!empty($_POST)) {
 
 <html>
     <head>
-        <title>	Khmer Store</title>
+        <title>Khmer Store</title>
         <link rel="shortcut icon" href="images/icon.ico" />
         <link href="style/main.css" rel="stylesheet" />
         <link href="style/pageLogIn.css" rel="stylesheet" />	
