@@ -81,11 +81,8 @@ if (!empty($_POST)) {
                             </tr>
                         </table>
                     </form>
-                    <div class="clear"></div>
                 </div>
-                <div class="clear"></div>
             </div>	
-            <div class="clear"></div>
         </div>	
     </body>
 </html>

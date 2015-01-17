@@ -13,20 +13,16 @@
                     <a href="index.php"><img src="images/logo.png" style="height: 34px" /></a>
                     <span id="user">
 			<?php displayUsername(); ?>
-                    </span>
-                    <div class="clear"></div>
-                </div>
-                <div class="clear"></div>
+                    </span>                    
+                </div>                
             </div>
             <div id="nav">
                 <div id="subNav">
                     <a href="findJobs.php" class="active">Find Jobs</a>
                     <a href="postJobs.php">Post Jobs</a>
                     <a href="ourServices.php">Our Services</a>
-                    <a href="contactUs.php">Contact Us</a>
-                    <div class="clear"></div>
-                </div>
-                <div class="clear"></div>
+                    <a href="contactUs.php">Contact Us</a>                    
+                </div>                
             </div>
             <div id="main">	
                 <div id="search">
@@ -46,8 +42,6 @@
 			?>
                     </select>
                     <input type="submit" value="Search" />
-                    <div class="clear"></div>
-
                 </div>
                 <div id="jobCat">
                     <table>
@@ -70,14 +64,11 @@
 			}
 			?>
                     </table>
-                    <div class="clear"></div>
                 </div>
-                <div class="clear"></div>
             </div>	
 	    <div class="main">
 		khkdsaf
 	    </div>
-            <div class="clear"></div>
         </div>	
     </body>
 </html>
