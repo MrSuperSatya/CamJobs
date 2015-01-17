@@ -14,14 +14,14 @@
                     <select> 			
 			<?php
 			    for($i=0;$i<count($functions);$i++){
-				echo "<option value='$$i'>$functions[$i]</option>";
+				echo "<option value='$i'>$functions[$i]</option>";
 			    }
 			?>
                     </select>
                     <select> 
                         <?php
 			    for($i=0;$i<count($locations);$i++){
-				echo "<option value='$$i'>$locations[$i]</option>";
+				echo "<option value='$i'>$locations[$i]</option>";
 			    }
 			?>
                     </select>

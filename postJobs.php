@@ -86,7 +86,6 @@ if (!empty($_POST)) {
                     <form method="post" action="postJobs.php">
                         <span class="formTitle">Post Jobs</span>
                         <table class="inputFormBox">
-                            <tr><td><span class="formSubTitle">Job Information</span></td></tr>
                             <tr>
                                 <td>Title : </td>
                                 <td><input class="requiredValidation" type="text" name="title" /></td>
@@ -100,7 +99,7 @@ if (!empty($_POST)) {
                                 <td>
                                     <select name="function">
 					<?php
-					for ($i = 0; $i < 9; $i++) {
+					for($i=0;$i<count($functions);$i++){
 					    echo "<option value='$i'>$functions[$i]</option>";
 					}
 					?>
@@ -120,9 +119,9 @@ if (!empty($_POST)) {
                                 <td>
                                     <select name="qual">
 					<?php
-					for ($i = 0; $i < 4; $i++) {
-					    echo "<option value='$i'>$quals[$i]</option>";
-					}
+					    for ($i = 0; $i < 4; $i++) {
+						echo "<option value='$i'>$quals[$i]</option>";
+					    }
 					?>
                                     </select>
                                 </td>
@@ -150,9 +149,9 @@ if (!empty($_POST)) {
                                 <td>
                                     <select name="location">
 					<?php
-					for ($i = 0; $i < 9; $i++) {
-					    echo "<option value='$i'>$locations[$i]</option>";
-					}
+					    for($i=0;$i<count($locations);$i++){
+						echo "<option value='$i'>$locations[$i]</option>";
+					    }
 					?>
                                     </select>
                                 </td>
