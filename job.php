@@ -52,28 +52,11 @@ if ($row = $statement->fetch(PDO::FETCH_NUM)) {
         <title>CamJobs</title>
         <link rel="shortcut icon" href="images/icon.ico" />
         <link href="style/main.css" rel="stylesheet" />
-        <link href="style/job.css" rel="stylesheet" />
+        <link href="style/job.css" rel="stylesheet" />  
     </head>
     <body>
         <div id="wrapper">
-            <div id="topBar">
-                <div id="subTopBar">
-                    <a href="index.php"><img src="images/logo.png" style="height: 34px" /></a>
-                    <span id="user"> <?php displayUsername(); ?> </span>
-                    <div class="clear"></div>
-                </div>
-                <div class="clear"></div>
-            </div>
-            <div id="nav">
-                <div id="subNav">
-                    <a href="index.php" class="active">Find Jobs</a>
-                    <a href="postJobs.php">Post Jobs</a>
-                    <a href="ourServices.php">Our Services</a>
-                    <a href="contactUs.php">Contact Us</a>
-                    <div class="clear"></div>
-                </div>
-                <div class="clear"></div>
-            </div>
+            <?php include 'topBarAndNav.php' ?>
             <div id="main">	
 		<div id="jobTitle"><?= $title ?></div>
                 <div id="detail">
@@ -172,11 +155,11 @@ if ($row = $statement->fetch(PDO::FETCH_NUM)) {
 			    <td><?= $address ?></td>
 			</tr>
 		    </table>
-                    <div class="clear"></div>
                 </div>
-                <div class="clear"></div>
             </div>	
-            <div class="clear"></div>
+	    <div class="main">
+		Another Box
+	    </div>
         </div>	
     </body>
 </html>

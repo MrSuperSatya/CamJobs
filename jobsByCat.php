@@ -4,7 +4,25 @@
 	<title>	Khmer Store</title>
 	<link rel="shortcut icon" href="images/icon.ico" />
 	<link href="style/main.css" rel="stylesheet" />
-	<link href="style/sideNav.css" rel="stylesheet" />
+	<style>
+	    #main #jobs table {
+		font-size: 17px;
+		margin-top: 10px ;
+		border: 1px solid #ddd;
+		border-collapse: collapse;
+	    }
+	    #main #jobs table th {
+		text-align: left;
+	    }
+	    #main #jobs table td, #main #jobs table th {
+		padding: 7px 10px;
+		border-right: 1px solid #ddd;
+		border-bottom: 1px solid #ddd;
+	    }
+	    #main #jobs table td:nth-child(4){
+		text-align: center;
+	    }
+	</style>
     </head>
     <body>
 	<div id="wrapper">
@@ -42,11 +60,15 @@
 		    <div class="clear"></div>
 
 		</div>
-		<div id="jobCat">
+		<div id="jobs">
 		    <table>
+			<col width="620">
+			<col width="200">
+			<col width="220">
+			<col width="160">
 			<tr>
 			    <th>Job Title</th>
-			    <th>Compnay</th>
+			    <th>Company</th>
 			    <th>Location</th>
 			    <th>Closing Date</th>
 			</tr>
@@ -55,15 +77,15 @@
 
 			$sql = "Select J.ID,Title,Name,j.Location,ClosingDate" .
 				" From Job As J,Company AS C" .
-				" Where c.ID=j.CompanyID and Function=?"; 
+				" Where c.ID=j.CompanyID and Function=?";
 			$statement = $db->prepare($sql);
-			
-			try{
-			    $statement->execute(array( $_GET["cat"] ));
+
+			try {
+			    $statement->execute(array($_GET["cat"]));
 			} catch (Exception $ex) {
 			    die('Cannot execute query: ' . $ex->getMessage());
 			}
-			
+
 			while ($row = $statement->fetch(PDO::FETCH_NUM)) {
 			    echo "<tr>";
 			    echo "<td><a href='job.php?id=$row[0]'>$row[1]</a></td>";
@@ -74,11 +96,11 @@
 			}
 			?>
 		    </table>
-		    <div class="clear"></div>
 		</div>
-		<div class="clear"></div>
-	    </div>		    
-	    <div class="clear"></div>	    
+	    </div>
+	    <div class="main">
+		Hello
+	    </div>	    
 	</div>	
     </body>
 </html>
