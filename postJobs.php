@@ -53,9 +53,9 @@ if (!empty($_POST)) {
             $("document").ready(function () {
                 $("#postDate").datepicker();
                 $("#postDate").datepicker("option", "dateFormat", "dd/mm/yy");
-		$("#closingDate").datepicker();
+                $("#closingDate").datepicker();
                 $("#closingDate").datepicker("option", "dateFormat", "dd/mm/yy");
-		$("#postDate").val($.datepicker.formatDate('dd/mm/yy', new Date()));		
+                $("#postDate").val($.datepicker.formatDate('dd/mm/yy', new Date()));
             });
 	</script>
     </head>
@@ -99,7 +99,7 @@ if (!empty($_POST)) {
                                 <td>
                                     <select name="function">
 					<?php
-					for($i=0;$i<count($functions);$i++){
+					for ($i = 0; $i < count($functions); $i++) {
 					    echo "<option value='$i'>$functions[$i]</option>";
 					}
 					?>
@@ -117,14 +117,14 @@ if (!empty($_POST)) {
                             <tr>
                                 <td>Qualification : </td>
                                 <td>
-                                    <select name="qual">
+                                    <select name="qual"> 
 					<?php
-					    for ($i = 0; $i < 4; $i++) {
-						echo "<option value='$i'>$quals[$i]</option>";
-					    }
+					for ($i = 0; $i < 4; $i++) {
+					    echo "<option value='$i'>$quals[$i]</option>";
+					}
 					?>
                                     </select>
-                                </td>
+                                </td> 
                             </tr>
                             <tr>
                                 <td>Sex : </td>
@@ -149,9 +149,9 @@ if (!empty($_POST)) {
                                 <td>
                                     <select name="location">
 					<?php
-					    for($i=0;$i<count($locations);$i++){
-						echo "<option value='$i'>$locations[$i]</option>";
-					    }
+					for ($i = 0; $i < count($locations); $i++) {
+					    echo "<option value='$i'>$locations[$i]</option>";
+					}
 					?>
                                     </select>
                                 </td>
@@ -159,11 +159,7 @@ if (!empty($_POST)) {
 			    <tr>
                                 <td>Post Date : </td>
                                 <td><input type="text" name="postDate" id="postDate" /></td>
-			    <script>
-
-			    </script>
-
-                            </tr>
+			    </tr>
 			    <tr>
                                 <td>Closing Date : </td>
                                 <td><input type="text" name="closingDate" id="closingDate" /></td>
