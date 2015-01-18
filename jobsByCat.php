@@ -4,25 +4,6 @@
 	<title>	Khmer Store</title>
 	<link rel="shortcut icon" href="images/icon.ico" />
 	<link href="style/main.css" rel="stylesheet" />
-	<style>
-	    #main #jobs table {
-		font-size: 17px;
-		margin-top: 10px ;
-		border: 1px solid #ddd;
-		border-collapse: collapse;
-	    }
-	    #main #jobs table th {
-		text-align: left;
-	    }
-	    #main #jobs table td, #main #jobs table th {
-		padding: 10px 10px;
-		border-right: 1px solid #e2e2e2;
-		border-bottom: 1px solid #e2e2e2;
-	    }
-	    #main #jobs table td:nth-child(4){
-		text-align: center;
-	    }
-	</style>
     </head>
     <body>
 	<div id="wrapper">
@@ -41,12 +22,12 @@
 		    <a href="index.php" class="active">Find Jobs</a>
 		    <a href="postJobs.php">Post Jobs</a>
 		    <a href="ourServices.php">Our Services</a>
-		    <a href="contactUs.php">Cantact Us</a>
+		    <a href="contactUs.php">Contact Us</a>
 		    <div class="clear"></div>
 		</div>
 		<div class="clear"></div>
 	    </div>
-	    <div id="main">	
+	    <div class="main">	
 		<div id="search">
 		    <input type="text" placeholder="Search job..." />
 		    <select> 
@@ -77,7 +58,8 @@
 
 			$sql = "Select J.ID,Title,Name,j.Location,ClosingDate" .
 				" From Job As J,Company AS C" .
-				" Where c.ID=j.CompanyID and Function=?";
+				" Where c.ID=j.CompanyID and Function=?" .
+				' Order By J.PostDate Desc';
 			$statement = $db->prepare($sql);
 
 			try {
@@ -92,7 +74,7 @@
 			    echo "<td><a href='#'>" . $row[2] . "</a></td>";
 			    echo "<td>" . $locations[$row[3]] . "</td>";
 			    echo "<td>" . date("d-m-Y", strtotime($row[4])) . "</td>";
-			    echo "<tr>";
+			    echo "</tr>";
 			}
 			?>
 		    </table>

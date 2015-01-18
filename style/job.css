@@ -1,53 +1,52 @@
-#main #detail {
+.main #detail {
     padding: 15px;
 }
 #jobTitle{
-    font-size: 22px;
-    padding: 15px 20px;
+    font-size: 21px;
+    padding: 8px 20px 15px 20px;
     border-bottom: 1px solid #ddd;
-    font-weight: bold;
 }
 .subTitle{
     font-size: 18px;
     padding: 15px 5px 2px 5px;
 }
-#main div pre {
+.main div pre {
     font-size: 17px;
     font-family: Verdana, Arial, Helvetica, sans-serif;
     white-space: pre-wrap;
     padding: 5px 50px 5px 20px;
 }
-#main table#company {
+.main table#company {
     font-size: 17px;
     margin: 10px 25px;
     border-collapse: collapse;
 }
-#main table#company td {
+.main table#company td {
     padding: 4px 10px;
 }
-#main table#job {
+.main table#job {
     font-size: 17px;
     margin: 10px 25px;
     border: 1px solid #ddd;
     border-collapse: collapse;
 }
-#main table#job tr td:nth-child(odd){
+.main table#job tr td:nth-child(odd){
     background: #f5f5f5;
     border-right: 1px solid #ddd;
 }
-#main table#job td {
+.main table#job td {
     padding: 5px 10px;
     border-bottom: 1px solid #ddd;
 }
 
-#main table#contact {
+.main table#contact {
     font-size: 17px;
     margin: 10px 25px;
     border-collapse: collapse;
 }
-#main table#contact td {
+.main table#contact td {
     padding: 5px 10px;
 }
-#main table#contact tr td:nth-child(odd){
+.main table#contact tr td:nth-child(odd){
     font-weight: bold;
 }

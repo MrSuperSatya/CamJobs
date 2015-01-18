@@ -52,10 +52,10 @@ if (!empty($_POST)) {
 	<script>
             $("document").ready(function () {
                 $("#postDate").datepicker();
-                $("#postDate").datepicker("option", "dateFormat", "dd/mm/yy");
+                $("#postDate").datepicker("option", "dateFormat", "dd-mm-yy");
                 $("#closingDate").datepicker();
-                $("#closingDate").datepicker("option", "dateFormat", "dd/mm/yy");
-                $("#postDate").val($.datepicker.formatDate('dd/mm/yy', new Date()));
+                $("#closingDate").datepicker("option", "dateFormat", "dd-mm-yy");
+                $("#postDate").val($.datepicker.formatDate('dd-mm-yy', new Date()));
             });
 	</script>
     </head>
@@ -81,100 +81,97 @@ if (!empty($_POST)) {
                 </div>
                 <div class="clear"></div>
             </div>
-            <div id="main">	
-                <div id="">
-                    <form method="post" action="postJobs.php">
-                        <span class="formTitle">Post Jobs</span>
-                        <table class="inputFormBox">
-                            <tr>
-                                <td>Title : </td>
-                                <td><input class="requiredValidation" type="text" name="title" /></td>
-                            </tr>
-                            <tr>
-                                <td>Year of Experience : </td>
-                                <td><input class="requiredValidation" type="text" name="yearExp" /></td>
-                            </tr>
-                            <tr>
-                                <td>Function : </td>
-                                <td>
-                                    <select name="function">
-					<?php
-					for ($i = 0; $i < count($functions); $i++) {
-					    echo "<option value='$i'>$functions[$i]</option>";
-					}
-					?>
-                                    </select>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Number of Hiring : </td>
-                                <td><input type="text" name="hiring" /></td>
-                            </tr>					
-                            <tr>
-                                <td>Salary : </td>
-                                <td><input type="text" name="salary" /></td>
-                            </tr>
-                            <tr>
-                                <td>Qualification : </td>
-                                <td>
-                                    <select name="qual"> 
-					<?php
-					for ($i = 0; $i < 4; $i++) {
-					    echo "<option value='$i'>$quals[$i]</option>";
-					}
-					?>
-                                    </select>
-                                </td> 
-                            </tr>
-                            <tr>
-                                <td>Sex : </td>
-                                <td>
-                                    <select name="sex">
-                                        <option value="Male/Female">Male/Female</option>
-					<option value="Male">Male</option>
-					<option value="Female">Female</option>
-                                    </select>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Language : </td>
-                                <td><input type="text" name="language" /></td>
-                            </tr>
-                            <tr>
-                                <td>Age : </td>
-                                <td><input type="text" name="age" /></td>
-                            </tr>                            
-			    <tr>
-                                <td>Location : </td>
-                                <td>
-                                    <select name="location">
-					<?php
-					for ($i = 0; $i < count($locations); $i++) {
-					    echo "<option value='$i'>$locations[$i]</option>";
-					}
-					?>
-                                    </select>
-                                </td>
-                            </tr>
-			    <tr>
-                                <td>Post Date : </td>
-                                <td><input type="text" name="postDate" id="postDate" /></td>
-			    </tr>
-			    <tr>
-                                <td>Closing Date : </td>
-                                <td><input type="text" name="closingDate" id="closingDate" /></td>
-                            </tr>
-			    <tr>
-                                <td></td>
-                                <td><input class="button" type="submit" value="Post" name="submit" /></td>
-                            </tr>
-                        </table>
-                    </form>
-                    <div class="clear"></div>
-                </div>
-                <div class="clear"></div>
-            </div>	
-            <div class="clear"></div>
-        </div>	
+            <div class="main">	
+		<form method="post" action="postJobs.php">
+		    <span class="formTitle">Post Jobs</span>
+		    <table class="inputFormBox">
+			<tr>
+			    <td>Title : </td>
+			    <td><input class="requiredValidation" type="text" name="title" /></td>
+			</tr>
+			<tr>
+			    <td>Year of Experience : </td>
+			    <td><input class="requiredValidation" type="text" name="yearExp" /></td>
+			</tr>
+			<tr>
+			    <td>Function : </td>
+			    <td>
+				<select name="function">
+				    <?php
+				    for ($i = 0; $i < count($functions); $i++) {
+					echo "<option value='$i'>$functions[$i]</option>";
+				    }
+				    ?>
+				</select>
+			    </td>
+			</tr>
+			<tr>
+			    <td>Number of Hiring : </td>
+			    <td><input type="text" name="hiring" /></td>
+			</tr>					
+			<tr>
+			    <td>Salary : </td>
+			    <td><input type="text" name="salary" /></td>
+			</tr>
+			<tr>
+			    <td>Qualification : </td>
+			    <td>
+				<select name="qual"> 
+				    <?php
+				    for ($i = 0; $i < 4; $i++) {
+					echo "<option value='$i'>$quals[$i]</option>";
+				    }
+				    ?>
+				</select>
+			    </td> 
+			</tr>
+			<tr>
+			    <td>Sex : </td>
+			    <td>
+				<select name="sex">
+				    <option value="Male/Female">Male/Female</option>
+				    <option value="Male">Male</option>
+				    <option value="Female">Female</option>
+				</select>
+			    </td>
+			</tr>
+			<tr>
+			    <td>Language : </td>
+			    <td><input type="text" name="language" /></td>
+			</tr>
+			<tr>
+			    <td>Age : </td>
+			    <td><input type="text" name="age" /></td>
+			</tr>                            
+			<tr>
+			    <td>Location : </td>
+			    <td>
+				<select name="location">
+				    <?php
+				    for ($i = 0; $i < count($locations); $i++) {
+					echo "<option value='$i'>$locations[$i]</option>";
+				    }
+				    ?>
+				</select>
+			    </td>
+			</tr>
+			<tr>
+			    <td>Post Date : </td>
+			    <td><input type="text" name="postDate" id="postDate" /></td>
+			</tr>
+			<tr>
+			    <td>Closing Date : </td>
+			    <td><input type="text" name="closingDate" id="closingDate" /></td>
+			</tr>
+			<tr>
+			    <td></td>
+			    <td><input class="button" type="submit" value="Post" name="submit" /></td>
+			</tr>
+		    </table>
+		</form>         
+	    </div>
+	    <div class="push"></div>
+	</div>
+	<?php include 'bottomBar.php'; ?>	
     </body>
 </html>

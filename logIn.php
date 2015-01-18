@@ -41,7 +41,7 @@ if (!empty($_POST)) {
                 <div class="clear"></div>
             </div>
 
-            <div id="main">	
+            <div class="main">	
                 <div id="">
                     <form method="post" action="logIn.php">
                         <span class="formTitle">
@@ -49,7 +49,7 @@ if (!empty($_POST)) {
 			    if (!empty($_GET) && isset($_GET['fromPage'])) {
 				echo 'To post jobs please log in.';
 			    } else {
-				echo 'Long in';
+				echo 'Log in';
 			    }
 			    ?>		    
 			</span>

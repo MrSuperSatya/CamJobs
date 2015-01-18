@@ -57,13 +57,13 @@ if ($row = $statement->fetch(PDO::FETCH_NUM)) {
     <body>
         <div id="wrapper">
             <?php include 'topBarAndNav.php' ?>
-            <div id="main">	
+            <div class="main">	
 		<div id="jobTitle"><?= $title ?></div>
                 <div id="detail">
-		    <div class="subTitle">Company</div>
+		    <div class="subTitle">About Company</div>
 		    <table id="company">
 			<tr>
-			    <td width="140px">Company : </td>
+			    <td width="120px">Company : </td>
 			    <td width="180px"><a href="com.php?id=<?= $comID ?>"><?= $comName ?></a></td>
 			</tr>
 			<tr>                               
@@ -157,9 +157,7 @@ if ($row = $statement->fetch(PDO::FETCH_NUM)) {
 		    </table>
                 </div>
             </div>	
-	    <div class="main">
-		Another Box
-	    </div>
+	    <?php include 'bottomBar.php';?>
         </div>	
     </body>
 </html>

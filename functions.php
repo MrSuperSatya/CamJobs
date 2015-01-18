@@ -1,7 +1,6 @@
 <?php
 
 // -------------------  Vars  -----------------------------------------
-// --------------------------------------------------------------------
 $quals = array(
     "High School",
     "Bachelor Degreee",
@@ -77,7 +76,6 @@ $comTypes = array(
 );
 
 // ---------------------------  Functions  ----------------------------------
-// --------------------------------------------------------------------------
 
 function displayUsername() {
     if (session_status() == PHP_SESSION_NONE) {
@@ -89,7 +87,7 @@ function displayUsername() {
 
 	$userName = ucwords($userName);
 	$userHasLogIn = "
-			<a id='userName' href='user.php'>$userName&nbsp;&#x25BE;</a>
+			<a id='userName' href='#'>$userName&nbsp;&#x25BE;</a>
 			<div class='arrow-up'></div>
 			<ul>                
 			    <li><a href='userAccount.php'>My Account</a></li>
@@ -124,5 +122,40 @@ function getJobFunctionCounts() {
     }
 
     return $counts;
+}
+
+function getMostRecentJobs() {
+    require 'connectDB.php';
+    global $locations;
+    
+    $sql = "Select J.ID, Title, Name, j.Location, ClosingDate" .
+	    " From Job As J,Company AS C" .
+	    " Where c.ID=j.CompanyID" .
+	    " Order By J.PostDate Desc Limit 10";    
+
+    try {
+	$statement = $db->prepare($sql);
+	$statement->execute();
+    } catch (Exception $ex) {
+	die('Cannot execute query: ' . $ex->getMessage());
+    }
+
+    echo '<table>
+	<col width="620"><col width="200"><col width="220"><col width="160">
+	<tr>
+	    <th>Job Title</th>
+	    <th>Company</th>
+	    <th>Location</th>
+	    <th>Closing Date</th>
+	</tr>';
+    while ($row = $statement->fetch(PDO::FETCH_NUM)) {
+	echo "<tr>";
+	echo "<td><a href='job.php?id=$row[0]'>$row[1]</a></td>";
+	echo "<td><a href='#'>" . $row[2] . "</a></td>";
+	echo "<td>" . $locations[$row[3]] . "</td>";
+	echo "<td>" . date("d-m-Y", strtotime($row[4])) . "</td>";
+	echo "</tr>";
+    }
+    echo '</table>';
 }
 ?>

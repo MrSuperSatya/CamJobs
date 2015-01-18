@@ -8,7 +8,7 @@
     <body>
         <div id="wrapper">
             <?php include 'topBarAndNav.php' ?>
-            <div id="main">	
+            <div class="main">	
                 <div id="search">
                     <input type="text" placeholder="Search..." />
                     <select> 			
@@ -34,7 +34,6 @@
 			$counts = getJobFunctionCounts();
 			
 			// Display all job functions
-			$j = 0;
 			for ($i = 0; $i < 12; $i++) {
 			    echo "<tr>";
 			    for ($j = 0; $j < 3 && $i * 3 + $j < 34; $j++) {
@@ -51,8 +50,15 @@
                 </div>
             </div>	
 	    <div class="main">
-		Another Box
+		<div id="jobs">
+		    <div class="title">Recent Post Jobs</div>
+		    <?php
+			getMostRecentJobs();
+		    ?>
+		</div>
 	    </div>
+	    <div class="push"></div>
         </div>	
+	<?php include 'bottomBar.php';?>
     </body>
 </html>

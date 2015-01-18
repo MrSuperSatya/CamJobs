@@ -1,20 +1,32 @@
+* {margin: 0px;padding: 0px;}
+html, body {
+    height: 100%;
+}
 body {
     font-family: Verdana, Arial, Helvetica, sans-serif;	
     font-size: 14px;
     padding: 0px;
+    background: #ebebeb;
 }
 a{
     text-decoration: none;
+    color: #0000bb;
 }
-* {margin: 0px;padding: 0px;}
+a:visited {
+    color: #000066;
+}
 
 #wrapper {
     background: #ebebeb;
     margin: 0 auto;
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -46px;
 }
 
 #topBar {
-    padding: 12px 0px 12px 0px;	
+    padding: 12px 0px 15px 0px;	
     background: #fff;
 }
 #topBar #subTopBar{
@@ -22,12 +34,13 @@ a{
     margin: 0 auto;
 }
 #topBar #user{
+    margin-top: 6px;
     float: right;
     text-align: right;
-    width: 185px;
+    width: 200px;
 }
 #topBar #user #userName {			
-    padding: 6px 10px;  	
+    padding: 7px 12px;  	
     font-weight: 800;			
 }
 #topBar #user #userName:hover {		
@@ -39,13 +52,13 @@ a{
 #topBar #user ul {        
     border: 1px solid #bbb;
     color: #333;
-    margin-top: 3px;
+    margin-top: 4px;
     display: none;
     position: absolute;
     z-index: 20;
-    -webkit-box-shadow: 0px 5px 20px 0px #000000 ;
-    -moz-box-shadow: 0 0 10px 0px #000000 ;
-    box-shadow: 0px 0px 10px 0px #888 ;
+    -webkit-box-shadow: 0px 0px 3px 0px #888;
+    -moz-box-shadow: 0px 0px 3px 0px #888;
+    box-shadow: 0px 0px 3px 0px #aaa;
 }
 #topBar #user ul li {
     border-bottom: 1px solid #ddd;
@@ -59,17 +72,18 @@ a{
     padding-top: 5px ;
     padding-bottom: 5px;
     padding-left: 25px;
-    width: 160px;
+    width: 173px;
     display: block;
     text-align: left;
 }
 #topBar #user ul li a:hover {
     background: #ddd;
+    color: #000;
 }
 /*Tranagle on top of menu user*/
 #topBar #user ul:after, #topBar #user ul:before {
     bottom: 100%;
-    left: 155px;
+    left: 170px;
     border: solid transparent;
     content: " ";
     height: 0;
@@ -93,15 +107,15 @@ a{
 
 #nav{
     background: #f9f9f9;
-    border-bottom: 1px solid #f0f0f0;
-    box-shadow: 0px 1px 1px #f0f0f0;
+    border-bottom: 1px solid #e5e5e5;
+    box-shadow: 0px 3px 3px #e8e8e8;
 }
 #nav #subNav{
     margin: 0px auto;
     display: table;	
 }
 #nav a {
-    margin: 5px 40px 0px 0px;
+    margin: 5px 20px 0px 20px;
     padding: 8px 1px;
     font-size: 16px;
     color: #333;
@@ -115,24 +129,31 @@ a{
     border-bottom: 3px solid blue;
     color: #000;
 }
-#main, .main{
+
+/* ---------------------    Mian     -----------------------------------------*/
+.main{
     margin: 12px auto;
     padding: 10;
-    width: 980px;
+    width: 978px;
     background: #fff;
     border: 1px solid #e5e5e5;
     border-bottom: 2px solid #e5e5e5;
     border-radius: 2px;
+    box-shadow: 0px 2px 2px #e6e6e6;
 }
-#main #search {
+.main .title{
+    font-size: 21px;
+    padding: 5px 20px 5px 0px;
+}
+.main #search {
     margin: 0px auto;
     display: table;
 }
-#main #search input, #main #search select{
+.main #search input, .main #search select{
     margin-right: 10px;
     float: left;
 }
-#main #search input[type=text] {    
+.main #search input[type=text] {    
     height: 37px;	
     width: 280px;
     font-size: 16px;
@@ -140,11 +161,11 @@ a{
     border: 1px solid #ccc;
     padding-left: 8px;
 }	
-#main #search input[type=text]:focus {
+.main #search input[type=text]:focus {
     border: 1px solid rgba(81, 203, 238, 1);	
     border-color: #2D9AF9;
 }
-#main #search select {
+.main #search select {
     height: 37px;
     padding-left: 5px;
     width: 200px;
@@ -152,11 +173,11 @@ a{
     font-size: 16px;
     outline: none;	
 }
-#main #search select:focus {
+.main #search select:focus {
     border: 1px solid rgba(81, 203, 238, 1);
     border-color: #2D9AF9;
 }
-#main #search input[type=submit],#header button{
+.main #search input[type=submit],#header button{
     padding: 8px 20px;
     color: #fff;
     font-size: 17px;
@@ -168,67 +189,73 @@ a{
     -moz-border-radius: 2px;
     border-radius: 2px;
 }
-#main #search input[type=submit]:hover, button:hover {
+.main #search input[type=submit]:hover, button:hover {
     background: #3074FC;		
 }
 
-#main #jobCat {
+.main #jobCat {
     margin: 0px auto;
     display: table;
     margin-top: 15px;
 }
-#main #jobCat table td{
+.main #jobCat table td{
     padding: 8px 15px;
     width: 280px;
-    font-size: 15px;	
+    font-size: 16px;	
 }
-#main #jobCat table th{
-    text-align: left;
-    padding: 8px 15px;
-    font-size: 15px;	
-}
-#main #jobCat table td a{
+.main #jobCat table td a{
     color: #333;			
 }
-#main #jobCat table td a:hover{
+.main #jobCat table td a:hover{
     color: #000;
     text-decoration: underline;
 }
 
+/*------------------------------- Table Jobs -------------------------------------------*/
+.main #jobs table {
+    font-size: 16px;
+    margin-top: 10px ;
+    border: 1px solid #ddd;
+    border-collapse: collapse;
+}
+.main #jobs table th {
+    text-align: left;
+}
+.main #jobs table td, .main #jobs table th {
+    padding: 8px 10px;
+    border-right: 1px solid #e2e2e2;
+    border-bottom: 1px solid #e2e2e2;
+}
+.main #jobs table td:nth-child(4) {
+    text-align: center;
+}
+
 /*------------------------------- Footer -------------------------------------------*/
+.push {
+    height: 45px;
+}
 #bottomBar {
-    border-top: 1px solid #D8D8D8;
-    padding: 5px 20px 2px 0px;	
-    background: #fff;
-    width:98%;
-}
-#bottomBar a{
-    color: #333;
-    font-size: 14px;
-    margin-right: 25px;
-}
-#bottomBar a:hover{
-    text-decoration: underline;
-}
-#bottomBar img {
-    height: 32px;
+    border-top: 1px solid #dadada;
+    padding: 0;    
+    background: #f9f9f9;
+    height: 45px;
 }
 #bottomBar #subBottomBar {
-    margin-left: 40px;
+    margin: 0 auto;
+    width: 1000px;
+    padding-top: 12px;
 }
-#bottomBar #subBottomBarLeft{
-    padding-top: 5px;
-    display:inline-block;
+#bottomBar #subBottomBar a{
+    color: #555;
+    font-size: 15px;
+    margin-right: 25px;
 }
-#bottomBar #subBottomBarRight {
-    float:right;
-    display:inline-block;
+#bottomBar #subBottomBar a:hover{
+    text-decoration: underline;
 }
-#bottomBar #subBottomBarRight a{
-    margin-right: 5px;
+#bottomBar #subBottomBar img {
+    height: 32px;
 }
-
-
 
 
 .clear{
