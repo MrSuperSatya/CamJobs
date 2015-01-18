@@ -14,7 +14,7 @@ a{
 }
 
 #topBar {
-    padding: 15px 0px;	
+    padding: 12px 0px 12px 0px;	
     background: #fff;
 }
 #topBar #subTopBar{
@@ -92,17 +92,18 @@ a{
 /*End - Tranagle on top of menu use */
 
 #nav{
-    background: #fff;
+    background: #f9f9f9;
+    border-bottom: 1px solid #f0f0f0;
+    box-shadow: 0px 1px 1px #f0f0f0;
 }
 #nav #subNav{
     margin: 0px auto;
-    display: table;
-    margin-bottom: 10px;	
+    display: table;	
 }
 #nav a {
-    margin: 5px 35px 0px 0px;
-    padding: 8px 0px;
-    font-size: 15px;
+    margin: 5px 40px 0px 0px;
+    padding: 8px 1px;
+    font-size: 16px;
     color: #333;
     display: block;
     float:left;
@@ -117,8 +118,11 @@ a{
 #main, .main{
     margin: 12px auto;
     padding: 10;
-    width: 1000px;
+    width: 980px;
     background: #fff;
+    border: 1px solid #e5e5e5;
+    border-bottom: 2px solid #e5e5e5;
+    border-radius: 2px;
 }
 #main #search {
     margin: 0px auto;
@@ -128,10 +132,9 @@ a{
     margin-right: 10px;
     float: left;
 }
-#main #search input[type=text] {
-    
+#main #search input[type=text] {    
     height: 37px;	
-    width: 250px;
+    width: 280px;
     font-size: 16px;
     outline: none;
     border: 1px solid #ccc;
@@ -164,8 +167,6 @@ a{
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
     border-radius: 2px;
-    /*text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);*/
-    /*border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);*/
 }
 #main #search input[type=submit]:hover, button:hover {
     background: #3074FC;		

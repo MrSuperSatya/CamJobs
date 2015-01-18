@@ -15,9 +15,9 @@
 		text-align: left;
 	    }
 	    #main #jobs table td, #main #jobs table th {
-		padding: 7px 10px;
-		border-right: 1px solid #ddd;
-		border-bottom: 1px solid #ddd;
+		padding: 10px 10px;
+		border-right: 1px solid #e2e2e2;
+		border-bottom: 1px solid #e2e2e2;
 	    }
 	    #main #jobs table td:nth-child(4){
 		text-align: center;
