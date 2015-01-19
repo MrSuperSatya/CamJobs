@@ -29,7 +29,7 @@ table a:visited {
 }
 
 #topBar {
-    padding: 12px 0px 15px 0px;	
+    padding: 12px 0px 13px 0px;	
     background: #fff;
 }
 #topBar #subTopBar{
@@ -47,7 +47,7 @@ table a:visited {
     font-weight: 800;			
 }
 #topBar #user #userName:hover {		
-    background: #eee;
+    text-decoration: underline;
 }
 #topBar #user:hover ul {
     display: block;   
@@ -109,9 +109,9 @@ table a:visited {
 /*End - Tranagle on top of menu use */
 
 #nav{
-    background: #f9f9f9;
+    background: #F5F5F5;
     border-bottom: 1px solid #e5e5e5;
-    box-shadow: 0px 3px 3px #e8e8e8;
+    box-shadow: 0px 2px 2px #e8e8e8;
 }
 #nav #subNav{
     margin: 0px auto;
@@ -241,7 +241,19 @@ table a:visited {
 .main #jobs table td:nth-child(4) {
     text-align: center;
 }
-
+/* -----------------------------   Contacts Us   --------------------------- */
+.main #contactsUs p {
+    font-size: 17px;
+    margin-left: 20px;
+    padding: 5px 0px;
+}
+.main #contactsUs table {
+    font-size: 17px;
+    margin-left: 20px;
+}
+.main #contactsUs table td {
+    padding: 5px 50px 5px 0px;
+}
 /*------------------------------- Footer -------------------------------------------*/
 .push {
     height: 45px;
@@ -249,7 +261,7 @@ table a:visited {
 #bottomBar {
     border-top: 1px solid #dadada;
     padding: 0;    
-    background: #f0f0f0;
+    background: #F5F5F5;
     height: 45px;
 }
 #bottomBar #subBottomBar {
