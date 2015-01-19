@@ -10,7 +10,7 @@
             <?php include 'topBarAndNav.php' ?>
             <div class="main">	
                 <div id="search">
-                    <input type="text" placeholder="Search..." />
+                    <input type="text" id="textBoxSearch" placeholder="Search..." />
                     <select> 			
 			<?php
 			    for($i=0;$i<count($functions);$i++){
@@ -82,5 +82,30 @@
 	    <div class="push"></div>
         </div>	
 	<?php include 'bottomBar.php';?>
+        <script src="script/jquery-1.11.1.min.js"></script>
+        <script src="script/jquery-ui-1.10.4.custom.min.js"></script>
+        <script type="text/javascript">
+            $(function () {
+                $('textBoxSearch').autocomplete({
+                    source: function (request, response) {
+                        $.ajax({
+                            url: "Search.aspx/getSearchingProducts",
+                            data: "{ 'pre':'" + request.term + "'}",
+                            dataType: "json",
+                            type: "POST",
+                            contentType: "application/json; charset=utf-8",
+                            success: function (data) {
+                                response($.map(data.d, function (item) {
+                                    return { value: item }
+                                }))
+                            },
+                            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                                alert(textStatus);
+                            }
+                        });
+                    }, minLength: 2
+                });
+            });
+        </script>
     </body>
 </html>
