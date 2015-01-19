@@ -165,7 +165,7 @@ if (!empty($_POST)) {
 			</tr>
 			<tr>
 			    <td></td>
-			    <td><input class="button" type="submit" value="Post" name="submit" /></td>
+			    <td><input class="button" type="submit" value="&nbsp;Post&nbsp;" name="submit" /></td>
 			</tr>
 		    </table>
 		</form>         

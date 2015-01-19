@@ -40,9 +40,10 @@
     padding: 8px 15px;
     outline: none;
     font-size: 17px;
-    margin: 10px 10px 0px 0px;
+    margin: 10px 10px 0px 5px;
     text-decoration: none;
     border:none;
+    border-radius: 2px;
 }
 .inputFormBox a.button:hover, .inputFormBox input[type=submit]:hover {
     background-color: #3074FC;
