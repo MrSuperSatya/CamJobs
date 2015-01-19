@@ -57,6 +57,28 @@
 		    ?>
 		</div>
 	    </div>
+            <div class="main">
+		<div id="usefulTips">
+		    <div class="title">Useful Links</div>
+                    <div class="usefulTip">
+                        <img src="" />
+                        <a href="#">How to write a CV</a>
+                    </div>
+                    <div class="usefulTip">
+                        <img src="" />
+                        <a href="#">How to prepare for job interview</a>
+                    </div>
+                    <div class="usefulTip">
+                        <img src="" />
+                        <a href="#">How to negotiate salary</a>
+                    </div>
+                    <div class="usefulTip">
+                        <img src="" />
+                        <a href="#">Top 10 job interview questions</a>
+                    </div>
+                    <div class="clear"></div>
+		</div>
+	    </div>
 	    <div class="push"></div>
         </div>	
 	<?php include 'bottomBar.php';?>
