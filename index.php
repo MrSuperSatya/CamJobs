@@ -4,6 +4,7 @@
         <title>Cam Jobs</title>
         <link rel="shortcut icon" href="images/icon.ico" />
         <link href="style/main.css" rel="stylesheet" />     
+        <link href="style/jquery-ui-1.10.4.custom.css" rel="stylesheet" />
     </head>
     <body>
         <div id="wrapper">
@@ -86,10 +87,10 @@
         <script src="script/jquery-ui-1.10.4.custom.min.js"></script>
         <script type="text/javascript">
             $(function () {
-                $('textBoxSearch').autocomplete({
+                $('#textBoxSearch').autocomplete({
                     source: function (request, response) {
                         $.ajax({
-                            url: "Search.aspx/getSearchingProducts",
+                            url: "search.php",
                             data: "{ 'pre':'" + request.term + "'}",
                             dataType: "json",
                             type: "POST",
