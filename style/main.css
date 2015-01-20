@@ -217,6 +217,7 @@ table a:visited {
     float: left;
     width: 485px;
     font-size: 17px;
+    margin: 10px 0px 0px 0px;
 }
 .main #usefulTips .usefulTip img {
     width: 80px;
@@ -225,8 +226,9 @@ table a:visited {
     float: left;
 }
 .main #usefulTips .usefulTip a {
-    padding: 10px 0px 0px 5px;
+    padding: 15px 0px 0px 7px;
     display: block;
+    float: left;
 }
 
 /*------------------------------- Table Jobs -------------------------------------------*/
@@ -289,8 +291,8 @@ table a:visited {
 
 
 .clear{
-    clear:both;
+    clear: both;
 }
 .hidden {
-    visibility:hidden;
+    visibility: hidden;
 }
