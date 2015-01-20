@@ -221,6 +221,12 @@ table a:visited {
 .main #usefulTips .usefulTip img {
     width: 80px;
     height: 60px;
+    display: block;
+    float: left;
+}
+.main #usefulTips .usefulTip a {
+    padding: 10px 0px 0px 5px;
+    display: block;
 }
 
 /*------------------------------- Table Jobs -------------------------------------------*/
