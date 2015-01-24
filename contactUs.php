@@ -75,6 +75,25 @@
 		    </p>
 		</div>
 	    </div>
+            <div id="main">
+                <div id="contactsUs">
+		    <div class="title">Comment</div>
+                    <table>
+                        <tr>
+                            <td>Name</td>
+                            <td><input type="input" name="name" /></td>
+                        </tr>
+                        <tr>
+                            <td>Email</td>
+                            <td><input type="input" name="email" /></td>
+                        </tr>
+                        <tr>
+                            <td>Comment</td> 
+                            <td><textarea name="comment"></textarea></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
 	    <div class="push"></div>
         </div>	
 	<?php include 'bottomBar.php'; ?>
