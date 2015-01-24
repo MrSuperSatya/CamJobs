@@ -81,12 +81,31 @@ if (!empty($_POST)) {
                             </tr>
 			    <tr>
                                 <td></td>
-                                <td><input class="button" type="submit" value="Log in with Facebook" name="submit" /></td>
+                                <td>
+				    <?php
+				    require 'facebook.php';
+				    $facebook = new Facebook(array(
+					'appId' => '1536722463248850',
+					'secret' => 'f7cf646224bd394ab6b61feca53b4900'
+				    ));
+
+				    if ($facebook->getUser() == 0) {
+					$loginUrl =  $facebook->getLoginUrl(array ( 
+					    'display' => 'popup',
+					    'redirect_uri' => 'http://localhost/CamJobs/logIn.php'
+					));
+					echo "<a href = '$loginUrl'><img src='images/login with facebook.png' width='185px'/></a>";
+				    }
+				    else {
+					$api = $facebook->api('me');
+					var_dump($api);
+				    }
+				    ?>				    				    
+				</td>
                             </tr>
                         </table>
                     </form>
-                </div>
-		
+                </div>		
 		<div class="clear"></div>
             </div>	
 	    <div class="clear"></div>

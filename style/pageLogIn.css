@@ -50,3 +50,7 @@
 .inputFormBox a.button:hover, .inputFormBox input[type=submit]:hover {
     background-color: #3074FC;
 }
+
+.inputFormBox img {
+    margin: 5px 5px;
+}
