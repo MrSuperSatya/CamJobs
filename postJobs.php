@@ -44,7 +44,7 @@ if (!empty($_POST)) {
         <title>CamJobs</title>
         <link rel="shortcut icon" href="images/icon.ico" />
         <link href="style/main.css" rel="stylesheet" />
-        <link href="style/pageLogIn.css" rel="stylesheet" />
+        <link href="style/form.css" rel="stylesheet" />
 
 	<link rel="stylesheet" href="style/jquery-ui.min.css">
 	<script src="script/jquery-2.1.1.min.js"></script>
@@ -88,8 +88,6 @@ if (!empty($_POST)) {
 			<tr>
 			    <td>Title : </td>
 			    <td><input class="requiredValidation" type="text" name="title" /></td>
-			</tr>
-			<tr>
 			    <td>Year of Experience : </td>
 			    <td><input class="requiredValidation" type="text" name="yearExp" /></td>
 			</tr>
@@ -104,16 +102,12 @@ if (!empty($_POST)) {
 				    ?>
 				</select>
 			    </td>
-			</tr>
-			<tr>
 			    <td>Number of Hiring : </td>
 			    <td><input type="text" name="hiring" /></td>
 			</tr>					
 			<tr>
 			    <td>Salary : </td>
 			    <td><input type="text" name="salary" /></td>
-			</tr>
-			<tr>
 			    <td>Qualification : </td>
 			    <td>
 				<select name="qual"> 
@@ -134,16 +128,12 @@ if (!empty($_POST)) {
 				    <option value="Female">Female</option>
 				</select>
 			    </td>
-			</tr>
-			<tr>
 			    <td>Language : </td>
 			    <td><input type="text" name="language" /></td>
 			</tr>
 			<tr>
 			    <td>Age : </td>
 			    <td><input type="text" name="age" /></td>
-			</tr>                            
-			<tr>
 			    <td>Location : </td>
 			    <td>
 				<select name="location">
@@ -158,10 +148,16 @@ if (!empty($_POST)) {
 			<tr>
 			    <td>Post Date : </td>
 			    <td><input type="text" name="postDate" id="postDate" /></td>
-			</tr>
-			<tr>
 			    <td>Closing Date : </td>
 			    <td><input type="text" name="closingDate" id="closingDate" /></td>
+			</tr>
+			<tr>
+			    <td>Description : </td>
+			    <td colspan="3"><textarea name="description" rows="5" style="width:800px"></textarea>
+			</tr>
+			<tr>
+			    <td>Requirement : </td>
+			    <td colspan="3"><textarea name="requirement" rows="5" style="width:800px"></textarea>
 			</tr>
 			<tr>
 			    <td></td>
