@@ -1,11 +1,21 @@
 <?php
+$formUrl = 'logIn.php';
+if (isset($_GET['fromPage'])) {
+    $formUrl = "logIn.php?fromPage={$_GET['fromPage']}";
+}
+
 if (!empty($_POST)) {
+    $redirectUrl = 'index.php';    
+    if (isset($_GET['fromPage'])) {
+	$redirectUrl = $_GET['fromPage'];	
+    }
+    
     include 'connectDB.php';
 
     $userName = $_POST['userName'];
     $password = $_POST['password'];
 
-    $sql = "Select ID From Company Where UserName=? and Password=?";
+    $sql = "Select ID From Company Where Username=? and Password=?";
     $statement = $db->prepare($sql);
     $statement->execute(array($userName, $password));
 
@@ -15,8 +25,8 @@ if (!empty($_POST)) {
 	if ($userID = $statement->fetch(PDO::FETCH_NUM)) {
 	    $_SESSION['userID'] = $userID[0];
 	}
-
-	header('Location: index.php');
+	
+	header("Location: $redirectUrl");	
     } else {
 	$incorrectPassword = true;
     }
@@ -46,7 +56,7 @@ if (!empty($_POST)) {
 		    <img src="images/job.jpg" width="400px" />
 		</div>
                 <div id="left">
-                    <form method="post" action="logIn.php">
+                    <form method="post" action="<?php echo $formUrl;?>">
                         <span class="formTitle">
 			    <?php
 			    if (!empty($_GET) && isset($_GET['fromPage'])) {
@@ -82,25 +92,7 @@ if (!empty($_POST)) {
 			    <tr>
                                 <td></td>
                                 <td>
-				    <?php
-				    require 'facebook.php';
-				    $facebook = new Facebook(array(
-					'appId' => '1536722463248850',
-					'secret' => 'f7cf646224bd394ab6b61feca53b4900'
-				    ));
-
-				    if ($facebook->getUser() == 0) {
-					$loginUrl =  $facebook->getLoginUrl(array ( 
-					    'display' => 'popup',
-					    'redirect_uri' => 'http://localhost/CamJobs/logIn.php'
-					));
-					echo "<a href = '$loginUrl'><img src='images/login with facebook.png' width='185px'/></a>";
-				    }
-				    else {
-					$api = $facebook->api('me');
-					var_dump($api);
-				    }
-				    ?>				    				    
+				    <a href = '$loginUrl'><img src='images/login with facebook.png' width='185px'/></a>
 				</td>
                             </tr>
                         </table>

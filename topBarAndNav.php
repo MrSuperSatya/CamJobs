@@ -4,15 +4,6 @@
 	<span id="user">
 	    <?php
 	    displayUsername();
-	    require 'facebook.php';
-	    $facebook = new Facebook(array(
-		'appId' => '1536722463248850',
-		'secret' => 'f7cf646224bd394ab6b61feca53b4900'
-	    ));
-	    if($facebook->getUser() != 0){
-		$api = $facebook->api('me');
-		echo "Hi " . $api[name];	    
-	    }
 	    ?>
 	</span>                    
     </div>                

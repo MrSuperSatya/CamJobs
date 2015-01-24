@@ -4,7 +4,7 @@ if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 if (empty($_SESSION)) {
-    header('Location: logIn.php?fromPage=postJob.php');
+    header('Location: logIn.php?fromPage=postJobs.php');
 }
 
 if (!empty($_POST)) {
