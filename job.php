@@ -2,7 +2,7 @@
 <?php
 include 'connectDB.php';
 
-$sql = " Select J.ID,`Name`, `Title`, `Level`, `Term`, `YearExp`, `Function`, " .
+$sql = " Select J.ID,`Name`, `Title`, `Term`, `YearExp`, `Function`, " .
 	" `Hiring`, `Salary`, `Qual`, `Sex`, `Language`, `Age`, J.`Location`, `PostDate`," .
 	" `ClosingDate`, J.`Description`, `Requirement`, ContactPerson, Phone, Email," .
 	" Website, Address, C.ID,C.Name,C.Type, C.Industry,C.empSize, C.`Location`" .
@@ -17,34 +17,33 @@ try {
 }
 
 if ($row = $statement->fetch(PDO::FETCH_NUM)) {
-    $comID = $row[23];
-    $comName = $row[24];    
-    $type = $row[25];
-    $industry = $row[26];
-    $empSize = $row[27];
-    $comLocation = $row[28];
+    $comID = $row[22];
+    $comName = $row[23];    
+    $type = $row[24];
+    $industry = $row[25];
+    $empSize = $row[26];
+    $comLocation = $row[27];
     
     $title = $row[2];
-    $level = $row[3];
-    $term = $row[4];
-    $yearExp = $row[5];
-    $function = $functions[$row[6]];
-    $hiring = $row[7];
-    $salary = $row[8];
-    $qual = $quals[$row[9]];
-    $sex = $row[10];
-    $language = $row[11];
-    $age = $row[12];
-    $location = $locations[$row[13]];
-    $postDate = date("d-m-Y", strtotime($row[14]));
-    $closingDate = date("d-m-Y", strtotime($row[15]));
-    $description = $row[16];
-    $requirement = $row[17];
-    $contactPerson = $row[18];
-    $phone = $row[19];
-    $email = $row[20];
-    $website = $row[21];
-    $address = $row[22];
+    $term = $row[3];
+    $yearExp = $row[4];
+    $function = $functions[$row[5]];
+    $hiring = $row[6];
+    $salary = $row[7];
+    $qual = $quals[$row[8]];
+    $sex = $row[9];
+    $language = $row[10];
+    $age = $row[11];
+    $location = $locations[$row[12]];
+    $postDate = date("d-m-Y", strtotime($row[13]));
+    $closingDate = date("d-m-Y", strtotime($row[14]));
+    $description = $row[15];
+    $requirement = $row[16];
+    $contactPerson = $row[17];
+    $phone = $row[18];
+    $email = $row[19];
+    $website = $row[20];
+    $address = $row[21];
 }
 ?>
 <html>
@@ -85,47 +84,41 @@ if ($row = $statement->fetch(PDO::FETCH_NUM)) {
 		    </table>
 		    <div class="subTitle">Job Details</div>
 		    <table id="job">
-			<tr>
-			    <td width="140px">Level : </td>
-			    <td width="180px"><?= $level ?></td>
+			<tr>			    
 			    <td width="110px">Term : </td>
 			    <td width="250px"><?= $term ?></td>
-			</tr>
-			<tr>                               
 			    <td>Year of Exp : </td>
 			    <td><?= $yearExp ?></td>
+			</tr>
+			<tr>     
 			    <td>Function : </td>
 			    <td><?= $function ?></td>
-			</tr>
-			<tr>
 			    <td>Hiring : </td>
 			    <td><?= $hiring ?></td>
+			</tr>
+			<tr>			    
 			    <td>Salary : </td>
 			    <td><?= $salary ?></td>
-			</tr>					
-			<tr>
 			    <td>Qualification : </td>
 			    <td><?= $qual ?></td>
+			</tr>					
+			<tr>			    
 			    <td>Sex : </td>
 			    <td><?= $sex ?></td>
-			</tr>
-			<tr>
 			    <td>Language : </td>
 			    <td><?= $language ?></td>
+			</tr>
+			<tr>			    
 			    <td>Age : </td>
 			    <td><?= $age ?></td>
-			</tr>
-			<tr>
 			    <td>Location : </td>
 			    <td><?= $location ?></td>
+			</tr>
+			<tr>			    
 			    <td>Post Date : </td>
 			    <td><?= $postDate ?></td>
-			</tr>
-			<tr>
 			    <td>Closing Date : </td>
 			    <td><?= $closingDate ?></td>
-			    <td></td>
-			    <td></td>
 			</tr>
 		    </table>
 		    <div class="subTitle">Job Description</div>

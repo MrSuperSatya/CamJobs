@@ -62,20 +62,14 @@
 			-  Our goals is to provide a convenient way for all job seekers and employers in Cambodia. 
 		    </p>
 		    <p>
-			-  Unlike other web sites, we want to keep CamJobs.com free of charge and advertisement.   
-		    </p>		    
-		    <p>
 			-  We also post new jobs on our <a href="#">Facebook Page</a> everyday, so don't forget to like our page.
 		    </p>
 		    <p>
 			-  If you have any questions or suggestions, please contact us with information above.   
 		    </p>
-		    <p>
-			-  Finally, we would like to say "Don't forget to be awsome !".
-		    </p>
 		</div>
 	    </div>
-            <div id="main">
+            <div class="main">
                 <div id="contactsUs">
 		    <div class="title">Comment</div>
                     <table>

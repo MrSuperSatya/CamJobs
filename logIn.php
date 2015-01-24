@@ -40,23 +40,23 @@ if (!empty($_POST)) {
                 </div>
                 <div class="clear"></div>
             </div>
-
+	    
             <div class="main">	
-                <div id="">
+		<div id="right">
+		    <img src="images/job.jpg" width="400px" />
+		</div>
+                <div id="left">
                     <form method="post" action="logIn.php">
                         <span class="formTitle">
 			    <?php
 			    if (!empty($_GET) && isset($_GET['fromPage'])) {
-				echo 'To post jobs please log in.';
+				echo 'To post jobs please log in';
 			    } else {
 				echo 'Log in';
 			    }
 			    ?>		    
 			</span>
 			<table class="inputFormBox">
-                            <tr>
-				<td><span class="formSubTitle">Log in</span></td>
-			    </tr>
                             <tr>
                                 <td>Username : </td>
                                 <td><input class="requiredValidation" type="text" name="userName" /></td>
@@ -79,10 +79,17 @@ if (!empty($_POST)) {
                                 <td></td>
                                 <td><input class="button" type="submit" value="Log in" name="submit" /></td>
                             </tr>
+			    <tr>
+                                <td></td>
+                                <td><input class="button" type="submit" value="Log in with Facebook" name="submit" /></td>
+                            </tr>
                         </table>
                     </form>
                 </div>
+		
+		<div class="clear"></div>
             </div>	
+	    <div class="clear"></div>
         </div>	
     </body>
 </html>

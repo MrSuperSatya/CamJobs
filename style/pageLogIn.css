@@ -1,12 +1,14 @@
-﻿.formTitle {
-    font-size: 26px;
-    padding-bottom: 10px;
+﻿div #left, div #right {
+    float: left;
+    margin: 10px;
+}
+.formTitle {
+    font-size: 24px;
 }
 .inputFormBox {
     font-family: 'Open Sans', sans-serif;
     font-size: 17px;
-    padding: 20px;
-    margin: 10px;
+    margin-top: 30px;
 }
 .inputFormBox .formSubTitle{
     font-size: 19px;
